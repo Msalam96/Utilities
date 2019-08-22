@@ -15,17 +15,27 @@ namespace LS
             //Console.Write(path);
             //Console.ReadKey();
             DirectoryInfo directory = new DirectoryInfo(Directory.GetCurrentDirectory());
+            var itemsList = new List<string>();
 
             foreach (DirectoryInfo directoryInfo in directory.GetDirectories())
             {
                 string file = directoryInfo.Name;
                 file += "/";
-                Console.WriteLine(file);
+                itemsList.Add(file);
+                //Console.WriteLine(file);
             }
 
             foreach (FileInfo fileInfo in directory.GetFiles())
             {
-                Console.WriteLine(fileInfo.Name);
+                string file = fileInfo.Name;
+                itemsList.Add(file);
+                //Console.WriteLine(fileInfo.Name);
+            }
+
+            itemsList.Sort();
+            foreach(var item in itemsList)
+            {
+                Console.WriteLine(item);
             }
 
             Console.ReadKey();

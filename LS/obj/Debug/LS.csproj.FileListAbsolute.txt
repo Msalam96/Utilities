@@ -1,0 +1,6 @@
+c:\users\admin\documents\visual studio 2015\Projects\LS\LS\bin\Debug\LS.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\LS\LS\bin\Debug\LS.exe
+c:\users\admin\documents\visual studio 2015\Projects\LS\LS\bin\Debug\LS.pdb
+c:\users\admin\documents\visual studio 2015\Projects\LS\LS\obj\Debug\LS.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\LS\LS\obj\Debug\LS.exe
+c:\users\admin\documents\visual studio 2015\Projects\LS\LS\obj\Debug\LS.pdb

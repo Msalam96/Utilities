@@ -21,7 +21,6 @@ namespace LS
                 string file = directoryInfo.Name;
                 file += "/";
                 Console.WriteLine(file);
-                //Console.WriteLine(@"{0, -30}\ directory", d.Name);
             }
 
             foreach (FileInfo fileInfo in directory.GetFiles())

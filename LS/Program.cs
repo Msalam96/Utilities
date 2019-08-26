@@ -14,20 +14,59 @@ namespace LS
             //string path = Directory.GetCurrentDirectory();
             //Console.Write(path);
             //Console.ReadKey();
+            bool list = false;
+            const string date = "MMM dd HH:mm";
+
+            if(args[0] == "-l")
+            {
+                list = true;
+                Console.WriteLine("Size \t \tCreated \tModified"); 
+            }
+
             DirectoryInfo directory = new DirectoryInfo(Directory.GetCurrentDirectory());
+            var itemsList = new List<string>();
 
             foreach (DirectoryInfo directoryInfo in directory.GetDirectories())
             {
                 string file = directoryInfo.Name;
                 file += "/";
-                Console.WriteLine(file);
-                //Console.WriteLine(@"{0, -30}\ directory", d.Name);
+                DateTime creation = directoryInfo.CreationTime;
+                DateTime modified = directoryInfo.LastWriteTime;
+                string createdDate = creation.ToString(date);
+                string modifiedDate = modified.ToString(date);
+                if (list)
+                {
+                    file = "\t \t" + createdDate + "\t" + modifiedDate + "\t" + file;
+                }
+                itemsList.Add(file);
+                //Console.WriteLine(file);
             }
 
             foreach (FileInfo fileInfo in directory.GetFiles())
             {
-                Console.WriteLine(fileInfo.Name);
+                string file = fileInfo.Name;
+
+                string fileSize = fileInfo.Length.ToString();
+                DateTime creation = fileInfo.CreationTime;
+                DateTime modified = fileInfo.LastWriteTime;
+                string createdDate = creation.ToString(date);
+                string modifiedDate = modified.ToString(date);
+
+                if (list)
+                {
+                    file = fileSize + "\t \t" + createdDate + "\t" + modifiedDate + "\t" + file; 
+                }
+                itemsList.Add(file);
+                //Console.WriteLine(fileInfo.Name);
             }
+
+            itemsList.Sort();
+            foreach (var item in itemsList)
+            {
+                Console.WriteLine(item);
+            }
+            
+            
 
             Console.ReadKey();
         }

@@ -20,7 +20,7 @@ namespace LS
             if(args[0] == "-l")
             {
                 list = true;
-                Console.WriteLine("Size \t \tCreated \t \tModified"); 
+                Console.WriteLine("Size \t \tCreated \tModified"); 
             }
 
             DirectoryInfo directory = new DirectoryInfo(Directory.GetCurrentDirectory());
@@ -36,7 +36,7 @@ namespace LS
                 string modifiedDate = modified.ToString(date);
                 if (list)
                 {
-                    file = "\t \t" + createdDate + "\t \t" + modifiedDate + "\t \t" + file;
+                    file = "\t \t" + createdDate + "\t" + modifiedDate + "\t" + file;
                 }
                 itemsList.Add(file);
                 //Console.WriteLine(file);
@@ -54,7 +54,7 @@ namespace LS
 
                 if (list)
                 {
-                    file = fileSize + "\t \t" + createdDate + "\t \t" + modifiedDate + "\t \t" + file; 
+                    file = fileSize + "\t \t" + createdDate + "\t" + modifiedDate + "\t" + file; 
                 }
                 itemsList.Add(file);
                 //Console.WriteLine(fileInfo.Name);
